@@ -92,9 +92,8 @@ function TransactionEditForm() {
                     <input type = 'submit' value = 'Create' />
                 </div>
              </form>
-
                 <Link to = {`/transactions/${index}`}>
-                    <button>Back</button>
+                    <button type = 'submit'>Back</button>
                 </Link>
             </div>
        </div>
