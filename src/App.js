@@ -4,7 +4,7 @@ import './App.css';
 
 import Edit from './Pages/Edit';
 import Home from './Pages/Home';
-import Index from './Pages/Home';
+import Index from './Pages/Index';
 import New from './Pages/New';
 import Show from './Pages/Show';
 
