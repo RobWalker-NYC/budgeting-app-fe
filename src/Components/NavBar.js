@@ -5,11 +5,10 @@ function Navbar() {
         <div>
             <nav>
                 <h1>
-                    <Link to="/transactions">Budget App</Link>
+                    <Link style={{'margin':'75px'}}to="/transactions">Budget App</Link>
+                    
+                    <Link style={{'margin':'75px'}}to="/transactions/new"><button style={{'padding':'5px'}}>New Transaction</button></Link>
                 </h1>
-                <button>
-                    <Link to="/transactions/new">New Transaction</Link>
-                </button>
             </nav>
         </div>
     );

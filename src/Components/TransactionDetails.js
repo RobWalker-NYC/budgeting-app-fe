@@ -32,21 +32,23 @@ const handleDelete = () => {
 return (
  <div>
    <div>
-       <div>Date {transaction.date}</div>
-       <div>Name {transaction.name}</div>
-       <div>From {transaction.from}</div>
-       <div>Amount {transaction.amount}</div>
+       <div>Date: {transaction.date}</div><br/>
+       <div>Name: {transaction.name}</div><br/>
+       <div>From: {transaction.from}</div><br/>
+       <div>Amount: {transaction.amount}</div><br/>
    </div> 
        <div>
            <Link to={'/transactions'}>
             <button>Back</button>
            </Link>
        </div>
+       <br/>
        <div>
            <Link to={`/transactions/${index}/edit`}>
             <button>Edit</button>
            </Link>
        </div>
+       <br/>
        <div>
            <button onClick={handleDelete}>Delete</button>
        </div>

@@ -31,59 +31,69 @@ function TransactionNewForm() {
     };
 
 return (
+  
     <div>
         <div>
+            <h1 style={{'margin-left':'25px'}}><strong>Add a new item</strong></h1>
+        </div>
+        <div style={{'margin-left':'25px'}} >
             <form onSubmit={handleSubmit}>
+            <br/>
                 <div>
-                     <lable htmlFor='date'>Date</lable>
-                     <input 
+                     <lable htmlFor='date'><strong>Date</strong></lable><br />
+                     <input style={{'padding':'5px'}}
                          id ='date'
                          value = {transactions.date}
                          type = 'date'
                          onChange = {handleTextChange}
-                         placeholder = 'Date of transaction'
+                         placeholder = 'date'
                          required
                          />
                  </div>
+                 <br/>
                  <div>
-                     <lable htmlFor='ItemName'>Item Name</lable>
-                     <input
+                     <lable htmlFor='ItemName'><strong>Name</strong></lable><br />
+                     <input style={{'padding':'5px'}}
                          id ='name'
                          value = {transactions.name}
                          type = 'text'
                          onChange = {handleTextChange}
-                         placeholder = 'Name of item'
+                         placeholder = 'name'
                          required
                          />
                  </div>
+                 <br/>
                  <div>
-                    <lable htmlFor='amount'>Amount</lable>
-                    <input
+                    <lable htmlFor='amount'><strong>Amount</strong></lable><br />
+                    <input style={{'padding':'5px'}}
                         id ='amount'
                         value = {transactions.amount}
                         type = 'number'
                         onChange = {handleTextChange}
-                        placeholder = 'Amount'
+                        placeholder = 'amount'
                         required
                         /> 
                 </div>
+                <br/>
                 <div>
-                     <lable htmlFor='from'>From</lable>
-                     <input 
+                     <lable htmlFor='from'><strong>From</strong></lable><br />
+                     <input style={{'padding':'5px'}}
                          id ='from'
                          value = {transactions.from}
                          type = 'text'
                          onChange = {handleTextChange}
-                         placeholder = 'From'
+                         placeholder = 'from'
                          required
                          />
                 </div>
+                <br/>
                 <div>
-                    <input type = 'submit' value = 'Create' />
-                </div>   
+                    <input style={{'padding':'5px'}} type = 'submit' value = 'CREATE NEW ITEM' />
+                </div> 
+                <br/>  
             </form>
                 <Link to = {`/transactions/${index}`}>
-                    <button type = 'submit'>Back</button>
+                    <button style={{'padding':'5px'}} type = 'submit'>Back</button>
                 </Link>
         </div>
     </div>
