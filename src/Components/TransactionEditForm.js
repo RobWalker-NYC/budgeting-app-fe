@@ -16,36 +16,36 @@ function TransactionEditForm() {
     })
 
     const handleTextChange = (event) => {
-        setTransactions({ ...transaction, [event.target.id]: event.target.value })
-    }
+        setTransactions({ ...transactions, [event.target.id]: event.target.value });
+    };
 
     useEffect(() => {
         axios
-          .get(`${APP_API}/transactions/${index}`)
+          .get(`${API_URL}/transaction/${index}`)
           .then((res) => {
-              setTransaction(res.data);
-    })    .catch(() => {
-            navigate('/not-found');
+              setTransactions(res.data);
+        }).catch((error) => {
+            throw error
   })
-}, []);
+}, [index]);
 
    const handleSubmit = (event) => {
       event.preventDefault()
       axios
-        .put(`${API_URL}/transactions/${index}`, transaction)
+        .put(`${API_URL}/transaction/${index}`, transactions)
         .then((res) => {
-            navigate(`/transactions`)
-    })  .catch((error) => {
+            navigate(`/transaction`)
+      }).catch((error) => {
             console.log(error);
     })
-   }
+   };
 
    return(
        <div>
          <div>
              <form onSubmit={handleSubmit}>
                  <div>
-                     <lable htmlFor='Date'>Date</lable>
+                     <lable htmlFor='date'>Date</lable>
                      <input 
                          id ='date'
                          value = {transactions.date}
@@ -97,7 +97,7 @@ function TransactionEditForm() {
                 </Link>
             </div>
        </div>
-   )
+   );
 }
 
 export default TransactionEditForm;

@@ -3,9 +3,9 @@ import Transactions from '../Components/Transactions';
 function Index() {
     return (
         <div className='Index'>
-            <Transactions />
+          <Transactions />
         </div>
-    )
+    );
 }
 
 export default Index;

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const APP_API = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL;
 
 function TransactionNewForm() {
     const { index } = useParams();
@@ -16,24 +16,24 @@ function TransactionNewForm() {
     });
 
     const handleTextChange = (event) => {
-        setTransactions({ ...transactions, [event.target.id]: event.target.value})
+        setTransactions({ ...transactions, [event.target.id]: event.target.value});
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         axios
-           .post(`${API_URL}/transactions`, transaction)
+           .post(`${API_URL}/transactions`, transactions)
            .then((res) => {
                navigate('/transactions');
-       })  .catch((error) => {
-              consol.log(error);
+         }).catch((error) => {
+              console.log(error);
       })
-    }
+    };
 
 return (
     <div>
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                      <lable htmlFor='date'>Date</lable>
                      <input 

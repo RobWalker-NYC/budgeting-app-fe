@@ -11,33 +11,31 @@ function TransactionDetails() {
 
 useEffect(() => {
     axios
-      .get(`${API_URL}/transaction/${index}`)
+      .get(`${API_URL}/transactions/${index}`)
       .then((res) => {
           setTransaction(res.data)
-  })  .catch((error) => {
-          navigate('/not-found')
- })
-}, [])   
+    }).catch((error) => {
+          throw error
+ });
+}, [index]);   
 
 const handleDelete = () => {
     axios
       .delete(`${API_URL}/transactions/${index}`)
-      .then(() => {
+      .then((res) => {
           navigate('/transactions');
- })   .catch((error) => {
+    }).catch((error) => {
         console.log(error);
-  });
+  })
 };
-
-
 
 return (
  <div>
    <div>
-       <div>Date {transactions.date}</div>
-       <div>Name {transactions.name}</div>
-       <div>From {transactions.from}</div>
-       <div>Amount {transactions.amount}</div>
+       <div>Date {transaction.date}</div>
+       <div>Name {transaction.name}</div>
+       <div>From {transaction.from}</div>
+       <div>Amount {transaction.amount}</div>
    </div> 
        <div>
            <Link to={'/transactions'}>
@@ -53,7 +51,7 @@ return (
            <button onClick={handleDelete}>Delete</button>
        </div>
  </div>
-)
+);
 }
 
 export default TransactionDetails;
