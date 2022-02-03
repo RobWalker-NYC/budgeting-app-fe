@@ -8,7 +8,8 @@ function Transactions() {
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
-        axios.get(`${API_URL}/transactions`)
+        axios
+             .get(`${API_URL}/transactions`)
              .then((res) =>{
                  setTransactions(res.data);
            }).catch((error) => {
@@ -17,23 +18,23 @@ function Transactions() {
     }, []);
 
     const total  = transactions
-            .maps((transaction) => {return transaction.amount;})
+            .map((transaction) => {return transaction.amount;})
             .reduce(function (a, b) { return a + Number(b); }, 0);  
 
    function colorCode (amount) {
        if (amount > 1000) {
-             <h2 style={{'color':'green'}}>Bank Account Total: ${ amount.toFixed(2)}</h2>
+          return  <h2 style={{'color':'green'}}>Bank Account Total: ${ amount.toFixed(2)}</h2>
        } else if (amount < 1000 && amount > 0) {
-             <h2 style={{'color':'gray'}}>Bank Account Total: ${amount.toFixed(2)}</h2>
+              return <h2 style={{'color':'gray'}}>Bank Account Total: ${amount.toFixed(2)}</h2>
        } else {
-             <h2 style={{'color':'red'}}>Bank Account Total: ${amount.toFixed(2)}</h2>
+            return <h2 style={{'color':'red'}}>Bank Account Total: ${amount.toFixed(2)}</h2>
        }
-   }
+   };
 
     return (  
         <div>  
             <h2>
-                {colorCode(total)}    
+             {colorCode(total)}    
             </h2> 
           <section>
            <table>
@@ -47,7 +48,7 @@ function Transactions() {
              </thead>
              <tbody>
                 {transactions.map((transaction, index) => {
-                    return <Transaction key={index} transaction={transaction} index={index} />;
+                    return ( <Transaction key={index} transaction={transaction} index={index} />);
                 })}
              </tbody>
            </table> 

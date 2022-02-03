@@ -12,7 +12,7 @@ function TransactionNewForm() {
         date: '',
         name: '',
         amount: 0,
-        from: ''
+        from: '',
     });
 
     const handleTextChange = (event) => {
@@ -31,7 +31,6 @@ function TransactionNewForm() {
     };
 
 return (
-  
     <div>
         <div>
             <h1 style={{'margin-left':'25px'}}><strong>Add a new item</strong></h1>

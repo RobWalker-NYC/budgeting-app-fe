@@ -2,6 +2,7 @@ import { useState,  useEffect } from 'react';
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 function TransactionDetails() {
@@ -19,14 +20,14 @@ useEffect(() => {
  });
 }, [index]);   
 
-const handleDelete = () => {
+function  handleDelete() {
     axios
       .delete(`${API_URL}/transactions/${index}`)
       .then((res) => {
           navigate('/transactions');
     }).catch((error) => {
         console.log(error);
-  })
+  });
 };
 
 return (
@@ -35,7 +36,7 @@ return (
        <div>Date: {transaction.date}</div><br/>
        <div>Name: {transaction.name}</div><br/>
        <div>From: {transaction.from}</div><br/>
-       <div>Amount: {transaction.amount}</div><br/>
+       <div>Amount: {(transaction.amount)}</div><br/>
    </div> 
        <div>
            <Link to={'/transactions'}>

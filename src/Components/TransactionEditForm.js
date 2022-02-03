@@ -12,8 +12,8 @@ function TransactionEditForm() {
         date: '',
         name: '',
         amount: 0,
-        from: ''
-    })
+        from: '',
+    });
 
     const handleTextChange = (event) => {
         setTransactions({ ...transactions, [event.target.id]: event.target.value });
@@ -21,7 +21,7 @@ function TransactionEditForm() {
 
     useEffect(() => {
         axios
-          .get(`${API_URL}/transaction/${index}`)
+          .get(`${API_URL}/transactions/${index}`)
           .then((res) => {
               setTransactions(res.data);
         }).catch((error) => {
@@ -94,11 +94,11 @@ function TransactionEditForm() {
             </div>
             <br/>
             <div>
-                <input style={{'padding':'5px'}} type = 'submit' value = 'CREATE NEW ITEM' />
+                <input style={{'padding':'5px'}} type = 'submit' value = 'Submit Item' />
             </div> 
             <br/>  
         </form>
-            <Link to = {'/transactions/index'}>
+            <Link to = {`/transactions/${index}`}>
                 <button style={{'padding':'5px'}} type = 'submit'>Back</button>
             </Link>
       </div>
