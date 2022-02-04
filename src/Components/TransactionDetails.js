@@ -32,28 +32,22 @@ function  handleDelete() {
 
 return (
  <div>
-   <div>
+   <div class='tranDetail'>
        <div>Date: {transaction.date}</div><br/>
        <div>Name: {transaction.name}</div><br/>
-       <div>From: {transaction.from}</div><br/>
+       <div>Source: {transaction.source}</div><br/>
        <div>Amount: {(transaction.amount)}</div><br/>
    </div> 
-       <div>
+       <div class='detailBtns'>
            <Link to={'/transactions'}>
             <button>Back</button>
-           </Link>
-       </div>
-       <br/>
-       <div>
+           </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            <Link to={`/transactions/${index}/edit`}>
             <button>Edit</button>
-           </Link>
-       </div>
-       <br/>
-       <div>
+           </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            <button onClick={handleDelete}>Delete</button>
        </div>
- </div>
+</div>
 );
 }
 

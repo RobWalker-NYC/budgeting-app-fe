@@ -22,7 +22,7 @@ function Transactions() {
             .reduce(function (a, b) { return a + Number(b); }, 0);  
 
    function colorCode (amount) {
-       if (amount > 1000) {
+       if (amount >= 1000) {
           return  <h2 style={{'color':'green'}}>Bank Account Total: ${ amount.toFixed(2)}</h2>
        } else if (amount < 1000 && amount > 0) {
               return <h2 style={{'color':'gray'}}>Bank Account Total: ${amount.toFixed(2)}</h2>
@@ -33,6 +33,7 @@ function Transactions() {
 
     return (  
         <div>  
+           <div class='tranS'>
             <h2>
              {colorCode(total)}    
             </h2> 
@@ -41,9 +42,12 @@ function Transactions() {
              <thead>
                <tr>
                   <th>Date</th>
-                  <th>Name</th>
-                  <th>Amount</th>
-                  <th>From</th>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                  
+                  <th id='tranNewName'>Name</th>
+                  <th>Source</th>
+                  <th>{" "}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount</th>
                </tr>
              </thead>
              <tbody>
@@ -53,6 +57,7 @@ function Transactions() {
              </tbody>
            </table> 
           </section>
+         </div> 
         </div>
     );
 }

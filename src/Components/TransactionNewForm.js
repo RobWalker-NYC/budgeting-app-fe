@@ -32,11 +32,11 @@ function TransactionNewForm() {
 
 return (
     <div>
-        <div>
+        <div class='tranNew'>
             <h1 style={{'margin-left':'25px'}}><strong>Add a new item</strong></h1>
         </div>
         <div style={{'margin-left':'25px'}} >
-            <form onSubmit={handleSubmit}>
+            <form class='newVals' onSubmit={handleSubmit}>
             <br/>
                 <div>
                      <lable htmlFor='date'><strong>Date</strong></lable><br />
@@ -63,7 +63,19 @@ return (
                  </div>
                  <br/>
                  <div>
-                    <lable htmlFor='amount'><strong>Amount</strong></lable><br />
+                    <lable htmlFor='source'><strong>Source</strong></lable><br />
+                    <input style={{'padding':'5px'}}
+                         id ='source'
+                         value = {transactions.source}
+                         type = 'text'
+                         onChange = {handleTextChange}
+                         placeholder = 'source'
+                         required
+                         />
+                </div>
+                <br/>
+                <div>
+                <lable htmlFor='amount'><strong>Amount</strong></lable><br />
                     <input style={{'padding':'5px'}}
                         id ='amount'
                         value = {transactions.amount}
@@ -74,26 +86,16 @@ return (
                         /> 
                 </div>
                 <br/>
-                <div>
-                     <lable htmlFor='from'><strong>From</strong></lable><br />
-                     <input style={{'padding':'5px'}}
-                         id ='from'
-                         value = {transactions.from}
-                         type = 'text'
-                         onChange = {handleTextChange}
-                         placeholder = 'from'
-                         required
-                         />
-                </div>
-                <br/>
-                <div>
-                    <input style={{'padding':'5px'}} type = 'submit' value = 'CREATE NEW ITEM' />
-                </div> 
-                <br/>  
-            </form>
-                <Link to = {`/transactions/${index}`}>
-                    <button style={{'padding':'5px'}} type = 'submit'>Back</button>
-                </Link>
+                </form>
+                  <div class='tranNewBtns' >
+                    <div>
+                        <input style={{'padding':'5px'}} type = 'submit' value = 'CREATE NEW ITEM' />
+                    </div> 
+                    <br/>  
+                    <Link to = {`/transactions/${index}`}>
+                        <button style={{'padding':'5px'}} type = 'submit'>Back</button>
+                    </Link>
+                  </div>  
         </div>
     </div>
   )

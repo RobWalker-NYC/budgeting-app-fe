@@ -11,8 +11,8 @@ function TransactionEditForm() {
     const [transactions, setTransactions] = useState({
         date: '',
         name: '',
+        source: '',
         amount: 0,
-        from: '',
     });
 
     const handleTextChange = (event) => {
@@ -32,18 +32,19 @@ function TransactionEditForm() {
    const handleSubmit = (event) => {
       event.preventDefault()
       axios
-        .put(`${API_URL}/transaction/${index}`, transactions)
+        .put(`${API_URL}/transactions/${index}`, transactions)
         .then((res) => {
-            navigate(`/transaction`)
+            navigate(`/transactions`)
       }).catch((error) => {
             console.log(error);
     })
    };
 
    return(
-   <div>    
+   <div>  
+       <div class='tranEdit'>
         <div style={{'margin-left':'25px'}} >
-        <form onSubmit={handleSubmit}>
+        <form class='editVals' onSubmit={handleSubmit}>
         <br/>
             <div>
                 <lable htmlFor='date'><strong>Date</strong></lable><br />
@@ -69,8 +70,20 @@ function TransactionEditForm() {
                     />
             </div>
             <br/>
+            <div>            
+                <lable htmlFor='source'><strong>Source</strong></lable><br />
+                <input style={{'padding':'5px'}}
+                    id ='source'
+                    value = {transactions.source}
+                    type = 'text'
+                    onChange = {handleTextChange}
+                    placeholder = 'source'
+                    required
+                    />
+            </div>
+            <br/>
             <div>
-                <lable htmlFor='amount'><strong>Amount</strong></lable><br />
+            <lable htmlFor='amount'><strong>Amount</strong></lable><br />
                 <input style={{'padding':'5px'}}
                     id ='amount'
                     value = {transactions.amount}
@@ -81,27 +94,16 @@ function TransactionEditForm() {
                     /> 
             </div>
             <br/>
-            <div>
-                <lable htmlFor='from'><strong>From</strong></lable><br />
-                <input style={{'padding':'5px'}}
-                    id ='from'
-                    value = {transactions.from}
-                    type = 'text'
-                    onChange = {handleTextChange}
-                    placeholder = 'from'
-                    required
-                    />
-            </div>
-            <br/>
-            <div>
-                <input style={{'padding':'5px'}} type = 'submit' value = 'Submit Item' />
-            </div> 
-            <br/>  
-        </form>
+            </form>
+            <div class='tranEditBtns'>
+                <input style={{'padding':'5px'}} type = 'submit' value = 'Submit Item' /><br />
+                <br />
             <Link to = {`/transactions/${index}`}>
                 <button style={{'padding':'5px'}} type = 'submit'>Back</button>
             </Link>
-      </div>
+          </div> 
+       </div>
+      </div> 
     </div>
    );
 }
