@@ -16,6 +16,22 @@
   text-decoration: none;
 }
 
+.transaction {
+  text-decoration: none;
+}
+
+#dtBn1 {
+  margin-right: 75px;
+}
+
+#dtBn2 {
+  margin-right: 75px;
+}
+
+#dtBn3 {
+  margin-right: 75px;
+}
+
 .detailBtns {
   background-color: cyan;
   padding: 20px;

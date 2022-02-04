@@ -43,8 +43,8 @@ function TransactionEditForm() {
    return(
    <div>  
        <div class='tranEdit'>
-        <div style={{'margin-left':'25px'}} >
-        <form class='editVals' onSubmit={handleSubmit}>
+        <div class='editVals' style={{'margin-left':'25px'}} >
+        <form onSubmit={handleSubmit}>
         <br/>
             <div>
                 <lable htmlFor='date'><strong>Date</strong></lable><br />
@@ -94,14 +94,14 @@ function TransactionEditForm() {
                     /> 
             </div>
             <br/>
-            </form>
             <div class='tranEditBtns'>
                 <input style={{'padding':'5px'}} type = 'submit' value = 'Submit Item' /><br />
                 <br />
             <Link to = {`/transactions/${index}`}>
                 <button style={{'padding':'5px'}} type = 'submit'>Back</button>
             </Link>
-          </div> 
+            </div>
+        </form>
        </div>
       </div> 
     </div>

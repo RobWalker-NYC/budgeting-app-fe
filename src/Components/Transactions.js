@@ -45,7 +45,7 @@ function Transactions() {
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                  
                   <th id='tranNewName'>Name</th>
                   <th>Source</th>
-                  <th>{" "}
+                  <th>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount</th>
                </tr>

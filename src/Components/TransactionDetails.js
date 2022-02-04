@@ -36,16 +36,16 @@ return (
        <div>Date: {transaction.date}</div><br/>
        <div>Name: {transaction.name}</div><br/>
        <div>Source: {transaction.source}</div><br/>
-       <div>Amount: {(transaction.amount)}</div><br/>
+       <div>Amount:&nbsp;&nbsp;{(transaction.amount)}</div><br/>
    </div> 
        <div class='detailBtns'>
            <Link to={'/transactions'}>
-            <button>Back</button>
-           </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button id='dtBn1'>Back</button>
+           </Link>
            <Link to={`/transactions/${index}/edit`}>
-            <button>Edit</button>
-           </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           <button onClick={handleDelete}>Delete</button>
+            <button id='dtBn2'>Edit</button>
+           </Link>
+           <button id='dtBn3'onClick={handleDelete}>Delete</button>
        </div>
 </div>
 );

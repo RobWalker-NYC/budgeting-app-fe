@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 
 function Transaction ({ transaction, index }) {
+
     return (
-        
             <tr className='transaction'>
                 <td>{transaction.date}<hr class='hr'/></td>&nbsp;
             
                 <td>
-                    <Link id='hr' to={`/transactions/${index}`}>{transaction.name}</Link>{" "}
+                    <Link id='hr'to={`/transactions/${index}`}>{transaction.name}</Link>{" "}
             &nbsp;&nbsp;&nbsp;&nbsp;
             <hr class='hr'/>
                     </td>
@@ -15,7 +15,7 @@ function Transaction ({ transaction, index }) {
                     <td>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;{transaction.amount}<hr class='hr'/></td>
+            &nbsp;&nbsp;&nbsp;&nbsp;$ {transaction.amount}<hr class='hr'/></td>
             </tr>
             
         

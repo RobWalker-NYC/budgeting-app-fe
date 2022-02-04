@@ -86,8 +86,8 @@ return (
                         /> 
                 </div>
                 <br/>
-                </form>
-                  <div class='tranNewBtns' >
+            
+                  <div class='tranNewBtns'>
                     <div>
                         <input style={{'padding':'5px'}} type = 'submit' value = 'CREATE NEW ITEM' />
                     </div> 
@@ -96,6 +96,7 @@ return (
                         <button style={{'padding':'5px'}} type = 'submit'>Back</button>
                     </Link>
                   </div>  
+                  </form>
         </div>
     </div>
   )
